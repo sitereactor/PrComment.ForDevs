@@ -27,3 +27,22 @@ jobs:
               repo: context.repo.repo,
               body: output
             })
+  thankyou_job:
+      if: github.event_name == 'pull_request' && (github.event.action == 'closed' || github.event.pull_request.merged == true)
+      runs-on: ubuntu-latest
+      name: Thank You
+      steps:
+        - uses: actions/github-script@0.9.0
+          if: github.event_name == 'pull_request'
+          with:
+            script: |
+              const output = `#### Congratulations! Your Pull Request has been merged 🎉\
+        
+              We are happy to say that your PR has been merged! Thank you once again for talking the time to spend time on improving this Project.`;
+                
+              github.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: output
+              })
