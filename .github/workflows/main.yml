@@ -14,12 +14,10 @@ jobs:
         if: github.event_name == 'pull_request'
         with:
           script: |
-            const output = `#### Awesome! We love getting pull requests 🖌\`
-            
-            <details>            
-            Thank you for talking the time to submit a pull request to our open source Project.
+            const output = `#### Awesome! We love getting pull requests 🎉\
+       
+            Thank you for talking the time to submit a pull request to our open source Project. \
             We have notified our developers to review the changes from your PR, so you will hear from us soon.
-            </details>
             
             *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Workflow: \`${{ github.workflow }}\`*`;
               
