@@ -1,4 +1,4 @@
 # PrComment.ForDevs
-Commenting on PRs ForDevs demo
+Example of auto-posting comments on Pull Requests when they are opened and merged.
 
-Valuable addition
+This example was used as one of the demos in the "Github in Action" talk - an online session for the ForDevs meetup group.
